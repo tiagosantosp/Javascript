@@ -22,6 +22,29 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body{
+            display: grid;
+            grid-template-columns: 50% 20% 30%;/*voce determina que haverá 2 colunas e cada uma delas vai ocupar 50%*/
+            grid-template-columns: repeat(12, 8.33%);/*com a função repeat voce coloca o numero de vezes q quer repetir uma medida*/
+            grid-template-columns: repeat(4, 8.33%);
+            grid-template-columns: repeat(11, 100px)  100px;/*pode utilizar o repeat para quantos espaços desejar e colocar fora os outros*/
+
+            grid-template-columns: 200px 20% 1fr ;
+                                    /*200px é o tamanho da primeira coluna
+                                    20% é o tamanho da segunda coluna (sendo que 20% do tamanho do grid todo)
+                                    1fr é um fragmento que representa 1 todo de tudo que sobrou*/
+            grid-template-columns: 3fr 6fr 3fr;
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            grid-template-rows: 100px 1fr;/*como não especifiquei todas as linhas o tamanho das que sobrar é igual ao conteudo delas*/
+            grid-template-rows: 100px auto;/*ao utilizar o auto ele coloca o tamanho igual para os que sobrar*/
+        }
+
+        .d8 {
+            grid-column-end: span 2;/*este vai ocupar o tamanho de 2 espaços
+                                    podemos utilizar as linhas como referencia ACESSE NO FIREFOX AS LINHAS*/
+                                    
+        }
     </style>
 </head>
 

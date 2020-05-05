@@ -5,7 +5,29 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        /*primeiro colocamos o nome do seletor CSS */
+        .selector {
+            color: turquoise;/* Podemos utilizar cores no css*/
+            font-size: 30px;/* podemos utilizar unidades de medida como pixel*/
+            text-align: center;/* podemos utilizar valores já pré determinados */
+            border: solid 5px navy;/* podemos combinar vários valores*/
+            font-family: Arial, Helvetica, sans-serif;/* caso ele não encontre uma fonte ele tenta outra*/
+            /* FUNÇõES */
+            width: calc(100% - 100px);/* a largura vai ser 100% da tela menos 100px*/
+            background-color: rgb(10, 153, 255);
+        }
+
+        /* Usando pseudo classes*/
+        .selector:hover {
+            background-color: silver;
+        }
+
+        /* Usando pseudo elementos*/
+        .selector::first-letter{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 

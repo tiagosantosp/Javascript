@@ -6,7 +6,51 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font: size 40px;
+            margin: 5px;
+        }
+        .big {
+            font-size: 1.5em;           
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;/*flex direction diz qual a direção do layout*/
+            flex-direction: column-reverse;/*inverte a ordem dos itens*/
+            flex-direction: row-reverse;/*inverter o conteudo e deixa como linha*/
+            flex-direction: row;/*coloca o conteudo como linha*/
+            width: 50%;
+            flex-wrap: wrap;/*quebra de linha quando tiver um overflow*/
+            flex-wrap: wrap-reverse;/*quebra a linha e coloca a linha de baixo para cima*/
+            height: 200px;
+            flex-flow: row wrap;/*podemos conbinar a orientação com a quebra de linha*/
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+
+            justify-content: start;/*os alinhamento do bloco da esquerda para direita*/
+            justify-content: flex-end;/*alinhamento dos blocos da direita para esquerda*/
+            justify-content: center;/*centraliza o conteudo*/
+            justify-content: space-around;/*coloca um espaçamento igual para todos os componentes*/
+            justify-content: space-between;/*coloca espaçamento igual entre os elementos e nos cantos colocar margin 0*/
+
+
+            /*CROSS AXIS*/
+            height: 400px;
+            align-items: stretch;/*esse é o alinhamento padrão*/
+            align-items: baseline;/*baseia o alinhamento com a parte de baixo da fonte*/
+            align-items: flex-start;/*alinhamento pela parte de cima da fonte*/
+            align-items: flex-end;/*alinhamento pela parte de baixo*/
+            align-items: center; /*alinhamento centralizado*/
+
+            /*para mais de uma linha mesmos do justify-content*/
+            align-content: flex-start;/*alinhar o conteudo de cima para baixo*/
+            align-content: flex-end;/*alinhar  o conteudo de baixo para cima*/
+
+            
+
+        }
     </style>
 </head>
 

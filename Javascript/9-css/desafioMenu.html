@@ -4,10 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Desafio Menu</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+
+        body {
+            margin: 0px;
+        }
+        .logo {
+            width: inherit;
+            height: inherit;
+            float: left;
+        }
+
+       
+        img {
+            width: 250px;
+            height: 100px; 
+        }
+
+        .cabecalho {
+            background-color: rgb(208, 133, 231);
+            height: 100px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+        }
+        .menu-toggle {
+            display: none;
+        }
+        li {
+            display: inline-block;
+            position: relative;
+            height: 60px;
+            font-size: 30px;
+            padding: 20px;  
+            padding-top: 25px;
+            padding-bottom: 15px;
+            margin-top: 0px;  
+        }
+
+        li:hover {
+            background-color: rgb(238, 150, 234);
+        }
+        ul {
+            margin: 0px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: white;
+        }
+        .menu {
+            width: 600px;
+            float: left;
+        }
+
+
+        .autenticacao {
+            float: right;
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+        .autenticacao a {
+            text-decoration: none;
+            font-size: 30px;
+            padding: 13px;
+            color: white;
+            
+        }
+
+        
+        .destaque {
+            margin-left: 20px;
+            background-color: rgb(248, 93, 93);
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        @media(max-width: 500px) {
+            .menu-toggle {
+                display: block;
+            }
+
+        }
     </style>
 </head>
 
@@ -15,7 +94,7 @@
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+                <img src="../8-html/img/placa02.jpg" alt="Logo" />
             </a>
         </div>
         <button class="menu-toggle">
