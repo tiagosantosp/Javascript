@@ -1,0 +1,49 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span ff>backend</span>        
+        <ul>
+            <li>
+                <span ff>App</span>
+                 <ul>
+                     <li>Produto.js</li>
+                     <li>usuario.js</li>
+                     <li>venda.js</li>
+                 </ul>
+            </li>
+            <li>
+                <span ff>Config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span ff>Frontend</span>
+        <ul>
+            <li>
+                <span ff>Public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[ff]').forEach(folder =>{//para cada Tag que tenham o atributo ff 
+        folder.onclick = function(elemento) {//ao clicar no item
+            const ul = folder.nextElementSibling // pegar o filho direto da tag
+            const display = ul.style.display// pega o valor atual do display
+            ul.style.display = display ==='none'? 'block' : 'none'
+        }
+    })
+</script>
+

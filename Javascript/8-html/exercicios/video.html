@@ -1,0 +1,58 @@
+<!-- Constrols aparece os botoes do video -->
+<!-- autoplay inicia o video sózinho  -->
+<!-- controls-list='nodownload' desabilita a opção de Download -->
+
+<video id="meuVideo" width="400px" heigth="400px" controls autoplay controls-list='nodownload'>
+    <source src="../img/gol.mp4"> 
+</video>
+
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: #000000;
+        height: 100%;
+        text-align: center;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false // desabilita clicar com o direito
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        
+        }, 500)
+
+    }
+
+    configurarVideo('meuVideo')
+</script>

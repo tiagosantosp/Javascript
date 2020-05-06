@@ -2,7 +2,6 @@
 
 **/node_modules/
 
-**/8-html
 package-lock.json
 
-img/*
+8-html/img/
