@@ -31,7 +31,11 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        console.log(document.forms)
+        console.log(document.forms)//retorna um htmlColection
+        console.log(document.forms[0])//retorna o primeiro formulario
+        console.log(document.getElementsByName('pesquisa'))//retorna um nodeList
+        console.log(document.pesquisa) // acessa o elemento com o atributo name diretamente
+        console.log(document.pesquisa.q)// acessa o input
     </script>
 </body>
 

@@ -17,7 +17,12 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log(lista.getAttribute('destino'))// escritório
+        
+        lista.setAttribute('destino', 'empresa')// altera atributo primeiro passa o atributo depois o novo valor
+        lista.removeAttribute('destino')// remover atributos
+
     </script>
 </body>
 
