@@ -9,9 +9,26 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+
+        <!--onclick="navegarem5s(event)"  nesse caso event é o evento sendo passado-->
+        <a esperar-por-5s href="https://google.com.br" >Google</a>
     </div>
     <script>
-        // ...
+        function navegarem5s(evento) {//evento é clicar 
+            evento.preventDefault()
+            console.log('saindo em 5s...')
+            setTimeout(() => {
+                const link = evento.target //target é o elemento clicado
+                window.location.href = link.href
+            }, 5000)
+        }
+
+        //const a = document.querySelector('a')
+        //a.onclick = navegarem5s
+
+
+        //a melhor solução é colocar um atributo personalizado para associar ao evento
+        const a = document.querySelector('[esperar-por-5s')
+        a.onclick = navegarem5s
     </script>
 </body>

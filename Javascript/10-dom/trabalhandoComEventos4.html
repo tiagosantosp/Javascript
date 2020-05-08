@@ -31,6 +31,21 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        const submit = document.querySelector('[wm-submit]')
+        submit.onclick = function(e) {
+            e.preventDefault()
+
+            const form = e.target.parentNode
+            const formData = new FormData(form)
+
+            formData.append('ajax', true)//adiciona dados ao formulario
+            formData.get('q')//pega o valor através do atributo name
+            formData.has('q')//has verifica se possui algo
+
+            for (let dado of formData) {
+                console.log(dado)
+            }
+
+        }
     </script>
 </body>

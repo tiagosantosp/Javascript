@@ -16,7 +16,14 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+
+        //Somente leitura
+        console.log(lista.attributes)//acessar atributos do elemento
+        console.log(lista.attributes[0])//acessa os atributos via array
+        console.log(lista.attributes.destino)//retorna o atributo e valor
+        console.log(lista.attributes['data-urgencia'])
+
     </script>
 </body>
 
