@@ -37,6 +37,11 @@ app.post('/formulario', (req, res) =>{
     })
 })
 
+//Formas de receber informações da pagina
+//req.body
+//req.query na url (?num=2)
+//req.params na url (/:numero) aceitaria qualquer numero
+
 app.get('/parOuImpar', (req, res) => {
     const par = parseInt(req.query.numero) % 2 === 0
     res.send({

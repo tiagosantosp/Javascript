@@ -19,10 +19,19 @@
             document.getElementById(id).innerHTML = texto
         }
 
+        
+        //axios('parOuImpar?numero=10').then(resp => exibirResultado('get', resp.data))
+
         axios.get('parOuImpar',{
             params: {
-                numero: 1  
+                numero: 9 
             }
         }).then(resp => exibirResultado('get', resp.data))
+
+        axios.post('formulario', {
+            nome: 'João',
+            sobrenome: 'Silva'
+        }).then(resp => exibirResultado('post', resp.data))
+
     </script>
 </body>
