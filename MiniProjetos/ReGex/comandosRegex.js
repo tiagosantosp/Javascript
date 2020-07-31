@@ -1,12 +1,11 @@
-let texto = 'Em ciência da computação, uma expressão regular ou "Regex" (ou os estrangeirismos regex ou regeeeeexp [1] , abreviação do inglês regular expression) provê uma forma concisa e flexível de identificar cadeias de caracteres de interesse, como caracteres particulares, palavras ou padrões de caracteres. Expressões regulares são escritas numa linguagem formal que pode ser interpretada por um processador de expressão regular, um programa que serve um gerador de analisador sintático ou examina o texto e identifica as partes que casam com a especificação dada.'
+let texto = 'Em ciência da computação, uma expressão regular ou "Regex" (ou os estrangeirismos regex ou regeeeeexp [1] , abreviação do inglês regular expression) provê uma forma concisa e flexível de identificar cadeias de caracteres de interesse, como caracteres particulares, palavras ou padrões de caracteres. Expressões regulares são escritas numa linguagem formal que pode ser regx interpretada por um processador de expressão regular, um programa que serve um gerador de analisador sintático ou examina o texto e identifica as partes que casam com a especificação dada.'
 
 
 // g é a flag para global 
 // i é para ignorar case sensitive 
 let regex = /(uma)/gi
 
-
-//Objeto RegExp
+//Objeto RegExpjeto 
 console.log(regex.exec(texto)[0])//retorna um Array com o valor buscado
 
 console.log(regex.test(texto))//verifica se possui a ocorrencia
@@ -40,13 +39,43 @@ console.log(texto.replace(regex, textoRegex => textoRegex.toLocaleUpperCase()))
 // {5, 10} de 5 a 10
 // {10}
 
-console.log()
 
-//pega mesmo que tenha 1 ou mais letras E no texto "regex"
+
+//pega mesmo que tenha 0 ou mais letras E no texto "regex"
 let regex2 = /rege*x/gi
 
 
 
-let teste = texto.match(regex2)
+let regex3 = /rege+x/gi
 
-console.log(teste)
+// pega se tiver 0 ou 1 letra E
+let regex4 = /rege?x/gi
+
+// \ ignora um caractere especial do regex
+let regex5 = /\[1]/gi
+
+//pega onde tiver exatamente 5 letras E seguidas
+let regex6 = /rege{5}x/gi
+
+
+
+// .(ponto) qualquer caractere
+
+
+
+// pega tudo que estiver entre da e o ÚLTIMO ou
+let regex7 = /da.*ou/gi
+
+
+// ao colocar a ? ele para no primeiro OU que ele encontrar
+let regex8 = /da.*?ou/gi
+
+
+
+console.log(texto.match(regex2))
+console.log(texto.match(regex3))
+console.log(texto.match(regex4))
+console.log(texto.match(regex5))
+console.log(texto.match(regex6))
+console.log(texto.match(regex7))
+console.log(texto.match(regex8))
