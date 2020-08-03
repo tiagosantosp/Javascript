@@ -1,0 +1,21 @@
+{
+  "name": "capwebpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "4.9.0",
+    "sass-loader": "7.0.1",
+    "css-loader": "0.28.11",
+    "style-loader": "0.21.0",
+    "mini-css-extract-plugin": "0.4.0",
+    "webpack": "4.8.1",
+    "webpack-cli": "2.1.3"
+  }
+}
