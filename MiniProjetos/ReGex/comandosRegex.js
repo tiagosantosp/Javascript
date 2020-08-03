@@ -1,4 +1,5 @@
-let texto = 'Em ciência da computação, uma expressão regular ou "Regex" (ou os estrangeirismos regex ou regeeeeexp [1] , abreviação do inglês regular expression) provê 73784ma forma concisa e flexível de identificar cadeias de caracteres de interesse, como caracteres paranalis3685ticulares, palavras ou padrões de caracteres. Expressões regulares são escritas numa linguagem formal que pode ser 1234regx interpretada por um processador de expressão regular, um programa que serve um gerador de analis56789ador sintático ou examina o texto e identifica as partes que casam com a especificação dada.'
+let texto = `Em inicio ciência# da computação, uma expressão regular ou "Regex" (ou os estrangeirismos regex ou &regeeeeexp [1]fim  abrev#iação do inglês regular expression)inicio provê 73784ma forma concisa e flexível de identificar& cadeias de caracteres de 
+interesse, como caracteres paranalis3685ticulares, fim palavras ou padrões de caracteres. Expressões reg#ulares são escritas numa linguagem formal que po&ser 1234regx interpretada por um processador de expressão regular, um programa que serve um gerador de analis56789ador sintático ou examina o texto e identifica as partes que casam com a especificação dada.`
 
 
 // g é a flag para global 
@@ -96,10 +97,7 @@ let regex13 = /analis[0-9]*/g
 let regex14 = /\D+/g
 
 
-
-
-
-
+let regex15 = /inicio.+?fim/g
 
 console.log(texto.match(regex2))
 console.log(texto.match(regex3))
@@ -114,3 +112,4 @@ console.log(texto.match(regex11))
 console.log(texto.match(regex12))
 console.log(texto.match(regex13))
 console.log(texto.match(regex14))
+console.log(texto.match(regex15))
