@@ -14,6 +14,21 @@
     <div>2</div>
 
     <script>
-        // ...
+        //para utilizar o JQuery utilizamos o $('dollar') ou nome JQuery
+        $('div').hide(2000).show(2000).fadeOut(2000)
+        console.log($('div').get(0))
+        console.log($.isEmptyObject({nome: null}))
+
+        console.log(jQuery.inArray(3,[1,2,3]))// verifica se o num 3 esta no array
+
+        //podemos criar funções para adicionar ao JQuery
+        $.fn.fundoVerde = function () {
+            this.css('background-color', 'green')//this referencia ao objeto utilizado para ivocar a função
+
+            return this // para utilizar o encadeamento fora da função é necessario retornar o this
+        }
+
+        //no caso o body será o objeto this
+        $('body').fundoVerde().fadeOut(2000)
     </script>
 </body>

@@ -49,6 +49,36 @@
     </form>
 
     <script>
-        // ...
+
+        //SELETORES CSS
+        $('#feira').addClass('destaque').removeClass('destaque')
+
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio]').removeClass('destaque')
+
+        $('li.opcional').removeClass('destaque')
+
+        $('div p span').addClass('destaque')
+
+        //SELETORES EXCLUSIVOS JQUERY
+        $('li:first').css('border', 'solid 3px yellow')//pega o primeiro li
+
+        $('li:odd').css('border', 'solid 10px orange')// pega os elemento impares 
+
+        $('li:gt(1)').css('border', 'solid 10px white')//pega os elementos maior que 1 no array
+
+        $('li:not(:last)').css('border', 'none')//nega algum 
+
+        $('li:contains("r")').css('background-color', "skyblue")//seleciona a partir do conteudo que contem a letra R
+
+        $('form *').hide(1000)
+
+        $('form :text').show(1000)
+        $('form :password').show(1000)
+        $('form :checkbox').show(1000)
+        $('form :radio').show(1000)
+        $('form :file').show(1000)
+
+
     </script>
 </body>
