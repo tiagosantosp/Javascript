@@ -1,14 +1,5 @@
 let texto = `Em inicio ciência# da computação, uma expressão regular ou "Regex" (ou os estrangeirismos regex ou &regeeeeexp [1]fim  abrev#iação do inglês regular expression)inicio provê 73784ma forma concisa e flexível de identificar& cadeias de caracteres de 
-interesse, como caracteres para
-
-
-
-
-nalis3685ticulares, fim palavras ou padrões de caracteres. Expressões reg#ulares são escritas numa linguagem formal que po&ser 1234regx interpretada por um processador de expressão regular, uiniciom programa que se
-
-
-
-rve um fim gerador de analis56789ador sintático ou examina o texto e identifica as partes que casam com a especificação dada.`
+interesse, como caracteres paranalis3685ticulares, fim palavras ou padrões de caracteres. Expressões reg#ulares são escritas numa linguagem formal que po&ser 1234regx inicioterpretada por um processador de expressão regular, um programa que serve um gerador de analis56789ador sintático ou examina o textofim e identifica as partes que casam com a especificação dada.`
 
 
 // g é a flag para global 
@@ -72,6 +63,14 @@ let regex6 = /rege{5}x/gi
 // .(ponto) qualquer caractere
 // [] (colchetes) utilizado para conjuntos
 // -(traço) dentro dos conjuntos significa até
+//\d significa dígitos de 0 até 9
+// \w significa a-z
+//[^](circunflexo) dentro dos colchetes significa negação
+// ^(circunflexo) começa com
+// $(dólar) termina com
+// flag m no final significa multiline
+
+
 
 // pega tudo que estiver entre da e o ÚLTIMO ou
 let regex7 = /da.*ou/gi
@@ -103,7 +102,8 @@ let regex12 = /[0-9]+/g
 let regex13 = /analis[0-9]*/g
 
 
-let regex14 = /\D+/g
+let regex14 = /\d+/g
+
 
 let regex15 = /inicio.+?fim/g
 
@@ -121,4 +121,3 @@ console.log(texto.match(regex12))
 console.log(texto.match(regex13))
 console.log(texto.match(regex14))
 console.log(texto.match(regex15))
-
