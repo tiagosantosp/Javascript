@@ -1,12 +1,8 @@
-const fetch = require("node-fetch");
+
 const url =`https://api.lyrics.ovh/v1/Taylor Swift/cardigan`
 
 
-const letraMusica = (letra) => {
-  const conteudo = document.createElement('p')
-  conteudo.innerHTML = letra.lyrics
-  return conteudo
-}
+
 
 
 fetch(url , { 
@@ -14,5 +10,7 @@ fetch(url , {
   }).then(
     response => response.json()
   ).then(letra => {
-    document.body.appendChild(`<p>${letra.lyrics}</p>`)
+    console.log(typeof(letra.lyrics))
+    document.body.innerHTML = `<p>${letra.lyrics}</p>`
   })
+
