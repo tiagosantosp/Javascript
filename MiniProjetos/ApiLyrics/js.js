@@ -14,5 +14,5 @@ fetch(url , {
   }).then(
     response => response.json()
   ).then(letra => {
-    document.body.appendChild(letraMusica(letra))
+    document.body.appendChild(`<p>${letra.lyrics}</p>`)
   })
