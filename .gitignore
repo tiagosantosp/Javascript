@@ -1,0 +1,16 @@
+**/node_modules
+
+**/node_modules/
+
+*package-lock.json
+
+javascript/8-html/img/
+
+**/.vscode
+
+
+
+
+MiniProjetos/server/index.html
+MiniProjetos/server/package.json
+MiniProjetos/server/server.js

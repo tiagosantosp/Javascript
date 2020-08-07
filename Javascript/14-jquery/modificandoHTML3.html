@@ -20,6 +20,19 @@
             { nome: 'Julia', nota: 9.7 }
         ]
         
-        // ...
+
+
+        let linhas = pessoas.map(p => {
+            const tdNome = $('<td>').html(p.nome)
+            const tdNota = $('<td>').html(p.nota)
+            return $('<tr>').append(tdNome).append(tdNota)
+        })
+
+        const tabela = $('<table>').append(linhas).css('border', 'solid 5px')
+
+        $('#conteudo').append(tabela)
+        
+        //$('#conteudo').append('<table>').append(tabela)
+
     </script>
 </body>

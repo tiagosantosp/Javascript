@@ -17,6 +17,25 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        $('#div1').append(', 2')
+        $('#div1').prepend('0 ,')
+        $('<span>, 3</span>').appendTo('#div1')
+        $('<span>-1, </span>').prependTo('#div1')
+
+        $('#div2').before('<p>antes</p>')//cria um elemento antes do selecionado
+        $('#div2').after('<p>depois</p>')//cria um elemento depois do selecionado
+
+        //$('p.numero').wrap('<div>') // wrap seria envolver os elementos selecionados  
+        $('p.numero').wrapAll('<div id="div4">')//wrapAll pega todos os que foram selecionados e os envolve
+
+        $('#div4').empty()//remove o conteudo do elemento
+        $('#div3, #div4').prev().remove()//prev seleciona o elemento anterior e remove vai remover os elementos
+
+
+        //$('<div>subistituto</div>').replaceAll('body > p')//faz um replace
+
+        $('body > p').replaceWith('<div>subs</div>')
+
+            
     </script>
 </body>
