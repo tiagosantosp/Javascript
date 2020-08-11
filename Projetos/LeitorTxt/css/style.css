@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5e875b;
+    flex-direction: column;
+}
+
+img {
+    top: 10px;
+    left: 0px;
+    position: absolute;
+    display: inherit;
+
+}
+
+
+.titulo {
+    margin-bottom: 0px;
+    color: #6ab982;
+    font-size: 3em;
+    text-shadow: 0px 0px 1px white;
+    margin-top: -1%;
+}
+
+
+main {
+    width: 60%;
+    height: 70%;
+    margin-top: 5%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px #4a692d;
+    background-color: #58aa71c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+p#none,
+input[type=file] {
+    display: none;
+}
+
+input[type=number] {
+    width: 7%;
+}
+
+#div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.buscar {
+    text-align: center;
+    color: rgb(59, 59, 59);
+    font-family: 'Sriracha', cursive;
+}
+
+.buscar input {
+    border-radius: 10px;
+    border: 1px;
+    height: 100%;
+
+}
+
+.buscar input[type=text] {
+    width: 50%;
+}
+
+
+#radio {
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: initial;
+}
+
+
+
+.btn {
+    border-radius: 50px;
+    width: 200px;
+    height: 100%;
+    box-shadow: 0px 0px 5px green;
+    border: none;
+    font-weight: bold;
+    margin-left: 30%;
+    font-family: 'Sriracha', cursive;
+    background-color: #6ab982;
+    transition: .3s;
+}
+
+#lbl {
+    cursor: pointer;
+    background-color: #6ab982;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px green;
+    transition: .3s;
+    font-family: 'Sriracha', cursive;
+}
+
+#lbl:hover,
+.btn:hover {
+    background-color: #3e694b;
+    color: whitesmoke;
+}

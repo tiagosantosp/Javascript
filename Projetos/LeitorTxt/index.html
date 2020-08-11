@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leitor TXT</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+    <img src="img/brasilata.png" alt="Logo da BRASILATA">
+
+    <h1 class="titulo">Buscador de TXT</h1>
+
+    <main>
+
+        <div class="buscar">
+            <label for="text">CAMPO-1: </label>
+            <input type="text" id="txt1">
+            <label for="number">N° Digitos: </label>
+            <input type="number" id="n1">
+        </div>
+
+        <div class="buscar">
+            <label for="text">CAMPO-2: </label>
+            <input type="text" id="txt2">
+            <label for="number">N° Digitos: </label>
+            <input type="number" id="n2">
+        </div>
+
+        <div class="buscar">
+            <label for="text">CAMPO-3: </label>
+            <input type="text" id="txt3">
+            <label for="number">N° Digitos: </label>
+            <input type="number" id="n3">
+        </div>
+
+        <div id="radio">
+            <input type="radio" id="excel" checked name="unico" value="excel">
+            <label for="excel">EXCEL</label>
+            <input type="radio" id="csv" name="unico" value="csv">
+            <label for="csv">CSV</label>
+            <input type="radio" id="txt" name="unico" value="txt">
+            <label for="txt">TXT</label>
+        </div>
+
+        <div id="div">
+            <label id="lbl" for="file">SELECIONAR ARQUIVO</label>
+            <input type="file" onchange="lerArquivo()" id="file">
+            <button class="btn" onclick="converterArquivo()">GERAR</button>
+        </div>
+
+
+    </main>
+
+    <p id="none"></p>
+
+
+
+    <script src="./js/js.js"></script>
+</body>
+
+</html>
