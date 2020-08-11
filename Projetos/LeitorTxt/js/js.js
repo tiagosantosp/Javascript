@@ -41,7 +41,7 @@ function converterArquivo() {
 }
 
 
-function buscarDados(relatorio) {
+async function buscarDados(relatorio) {
 
 
     let txt1 = document.querySelector('#txt1').value
@@ -54,20 +54,24 @@ function buscarDados(relatorio) {
 
     let campo1 = new RegExp(`${txt1}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n1}}`, 'g')
     let campo2 = new RegExp(`${txt2}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑF|/]{1,${n2}}`, 'g')
-    let campo3 = new RegExp(`${txt3}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n3}}`, 'g')
+    let campo3 = new RegExp(`${txt3}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ||/]{1,${n3}}`, 'g')
     console.log(txt1, txt2, txt3)
 
     let data = []
 
-    console.log(relatorio.match(campo1).length)
-
     for (let index = 0; index < relatorio.match(campo1).length; index++) {
-        data[index] = {
-            [txt1]: relatorio.match(campo1)[index],
-            [txt2]: relatorio.match(campo2)[index],
-            [txt3]: relatorio.match(campo3)[index]
+        try {
+            data[index] = {
+                [txt1]: relatorio.match(campo1)[index].replace(`${txt1}`, ''),
+                [txt2]: relatorio.match(campo2)[index].replace(`${txt2}`, ''),
+                [txt3]: relatorio.match(campo3)[index].replace(`${txt3}`, '')
+            }
+
+        } catch (error) {
+            continue
         }
     }
+
 
     if (document.querySelector('#excel').checked) {
         converteExcel(data)
@@ -91,7 +95,7 @@ function converteTxt(data) {
 
 
 function converteExcel(data) {
-    
+
     var ws = XLSX.utils.json_to_sheet(data)
 
     /* adicionar à pasta de trabalho */
@@ -101,5 +105,5 @@ function converteExcel(data) {
     /* gerar um arquivo XLSX */
 
     XLSX.writeFile(wb, "sheetjs.xlsx")
-    
+
 }
