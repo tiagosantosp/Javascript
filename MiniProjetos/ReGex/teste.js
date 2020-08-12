@@ -1,19 +1,16 @@
 const texto = require('./re0501')//requisita o arquivo
 
 let regex = /[^\n]+/g//remove linhas em branco
-let regex2 = /Emitente:.+?DATASUL/g//separa cada documento
 
 let semLinhas = texto.match(regex) //remove as linhas
 
 let textoJunto = ''
 
 for (item of semLinhas) {//Juntando o Array de para ser uma string única
-    textoJunto += item
+    textoJunto += item.replace(/( )+/g, ' ')
 }
 
-let semTabulacao = textoJunto.replace(/( )+/g, ' ')//remove tabulações 
 
-textoJunto = semTabulacao.match(regex2)
 
 
 let data = []
@@ -27,6 +24,7 @@ for (let dados = 0; dados < textoJunto.length; dados++){
     }
 }
 
-console.log(data)
+
+console.log(textoJunto.match(data))
 
 //data.forEach(registro => console.log(registro.emitente))

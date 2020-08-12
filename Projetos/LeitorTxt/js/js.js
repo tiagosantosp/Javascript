@@ -2,7 +2,7 @@ let texto = document.getElementById('file') //pega conteudo do inputFile
 
 
 function lerArquivo() {
-    var reader = new FileReader()
+    const reader = new FileReader()
 
 
     let arquivo = texto.files[0]
@@ -52,24 +52,35 @@ async function buscarDados(relatorio) {
     let n3 = document.querySelector('#n3').value
 
 
-    let campo1 = new RegExp(`${txt1}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n1}}`, 'g')
-    let campo2 = new RegExp(`${txt2}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑF|/]{1,${n2}}`, 'g')
-    let campo3 = new RegExp(`${txt3}[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ||/]{1,${n3}}`, 'g')
+    let campo1 = new RegExp(`${txt1}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n1}}`, 'g')
+    let campo2 = new RegExp(`${txt2}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n2}}`, 'g')
+    let campo3 = new RegExp(`${txt3}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ||/]{1,${n3}}`, 'g')
     console.log(txt1, txt2, txt3)
+
+    let dadosCampo1, dadosCampo2, dadosCampo3
+
+    dadosCampo1 = relatorio.match(campo1)
+    dadosCampo2 = relatorio.match(campo2)
+    dadosCampo3 = relatorio.match(campo3)
+
 
     let data = []
 
-    for (let index = 0; index < relatorio.match(campo1).length; index++) {
+    for (let index = 0; index < dadosCampo1.length; index++) {
         try {
+            
             data[index] = {
-                [txt1]: relatorio.match(campo1)[index].replace(`${txt1}`, ''),
-                [txt2]: relatorio.match(campo2)[index].replace(`${txt2}`, ''),
-                [txt3]: relatorio.match(campo3)[index].replace(`${txt3}`, '')
+                [txt1]: dadosCampo1[index].replace(`${txt1}`, ''),
+                [txt2]: dadosCampo2[index].replace(`${txt2}`, ''),
+                [txt3]: dadosCampo3[index].replace(`${txt3}`, '')
             }
-
         } catch (error) {
-            continue
-        }
+            data[index] = {
+                [txt1]: `ERRO NA POSICÃO ${index}`,
+                [txt2]: `ERRO NA POSICÃO ${index}`,
+                [txt3]: `ERRO NA POSICÃO ${index}`
+            }
+        }    
     }
 
 
