@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Leitor TXT</title>
-    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
     <script src="./js/xlsx.full.min.js"></script>
 
 </head>
@@ -18,6 +19,7 @@
         <div class="titulo">
             <h1 class="titulo">Buscador de TXT</h1>
         </div>
+
         <main>
             <div class="left">
                 <div class="buscar">
@@ -43,19 +45,23 @@
                 <label id="lbl" for="file">SELECIONAR ARQUIVO</label>
                 <input type="file" onchange="lerArquivo()" id="file">
             </div>
+
             <div class="rigth">
                 <div id="radio">
-                    <input type="radio" id="excel" checked name="unico" value="excel">
-                    <label for="excel">EXCEL</label>
-                    <input type="radio" id="csv" name="unico" value="csv">
-                    <label for="csv">CSV</label>
-                    <input type="radio" id="txt" name="unico" value="txt">
-                    <label for="txt">TXT</label>
+                    <div class="icon">
+                        <label for="excel"><i class="far fa-file-excel"></i></label>
+                        <label for="csv"><i class="fas fa-file-csv"></i></label>
+                        <label for="txt"><i class="far fa-file-alt"></i></label>
+                    </div>
+                    <div class="select">
+                        <input type="radio" id="excel" checked name="unico" value="excel">
+                        <input type="radio" id="csv" name="unico" value="csv">
+                        <input type="radio" id="txt" name="unico" value="txt">
+                    </div>
                 </div>
 
                 <button class="btn" onclick="converterArquivo()">GERAR</button>
             </div>
-
 
         </main>
 
