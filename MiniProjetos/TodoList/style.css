@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #03DFFF;
+    background: linear-gradient(139deg , #03ddffcb 0% , #ff0381b6 90%);
+}
+
+
+.container {
+    position: relative;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.addTask {
+     width: 100%;
+     display: flex;
+     padding: 10px 0;
+       
+}
+
+.addTask > input[type="text"]{
+    width: 90%;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #666;
+    background: none;
+    padding: 10px;
+    font-size: 22px;
+    outline: none;
+}
+
+.addTask button {
+    margin: 0 10px;
+    background: #222;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.naoCompleta ,.Completa {
+    margin: 5px 0 ;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+
+ol {
+    list-style: none;
+    counter-reset: my-counter;
+}
+
+ol li {
+    width: 100%;
+    padding: 18px;
+    margin: 5px 0;
+    background: #e96969bb;
+    font-size: 22px;
+    counter-increment: my-counter;
+}
+
+ol.Completa li {
+    background: #00ff62;
+}
+
+ol li::before{
+    content: counter(my-counter);
+}

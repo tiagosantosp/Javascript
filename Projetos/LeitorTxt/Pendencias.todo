@@ -3,11 +3,13 @@ Front-end:
     ☐ alterar o modo de inclusão de busca
     ☐ colocar um tutorial 
     ☐ fazer um design responsivo 
+    ☐ incluir inicio e fim do documento
 Back-end:
     ✔ melhorar desempenho @done (12/08/2020 16:42:07)
     ☐ adicionar conversor CSV
     ☐ adicionar conversor TXT
     ☐ converter o arquivo de entrada para UTF-8
+    ☐ utilzar dados de inicio e fim do documento
 
     
 
