@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
 body {
     margin: 0;
@@ -8,13 +9,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom right, white , rgb(214, 255, 152));
+    background-image: linear-gradient(to bottom right, white, rgb(214, 255, 152));
     flex-direction: column;
 }
 
 
 
-.logo{
+.logo {
     position: absolute;
     display: flex;
     top: 0;
@@ -23,12 +24,12 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 img {
-    max-width:300px;
-    max-height:108px;
+    max-width: 300px;
+    max-height: 108px;
     width: auto;
     height: auto;
 }
@@ -50,6 +51,94 @@ img {
     justify-content: space-around;
     align-items: center;
 }
+
+
+.busca {
+    height: 200px;
+}
+
+input {
+    width: 80%;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid green;
+    background: none;
+    padding: 10px;
+    font-size: 22px;
+    outline: none;
+    font-weight: bold;
+    
+
+}
+
+.add {
+    outline: none;
+    color: #777;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px grey;
+    border: none;
+    font-weight: bold;
+    font-family: 'Sriracha', cursive;
+    background-color: #6ab982;
+    transition: .3s;
+}
+
+
+
+ol {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    height: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+}
+
+
+
+li  {
+    list-style: none;
+    width: 90%;
+    background: rgba(214, 255, 152, 0.582);
+    font-size: 1.3rem;
+    border-radius: 2px;
+    font-weight: 500;
+    font-family: 'Ubuntu Mono', monospace;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+
+
+.fa-trash {
+    color: rgb(204, 201, 201);
+}
+
+ol li:nth-child(odd) {
+    background: whitesmoke;
+}
+
+li button {
+    float: right;
+    padding: 5px;
+    font-size: 28px;
+    line-height: 28px;
+    margin-right: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.fa-file-download {
+    color: whitesmoke;
+    font-size: 2rem;
+    margin-left: 20px;
+}
+
+
 .rigth {
     height: 100%;
     width: 40%;
@@ -74,7 +163,7 @@ div.titulo {
     top: 0px;
     text-align: center;
     border-radius: 10px 30px 0px 0px;
-    
+
 }
 
 
@@ -85,10 +174,10 @@ main {
     box-shadow: 1px 1px 10px #4a692d;
     background-color: rgba(233, 233, 233, 0.815);
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
 
 }
 
@@ -107,23 +196,6 @@ input[type=number] {
     justify-content: space-between;
     position: relative;
     margin-bottom: 20px;
-}
-
-.buscar {
-    text-align: center;
-    color: rgb(59, 59, 59);
-    font-family: 'Sriracha', cursive;
-}
-
-.buscar input {
-    border-radius: 10px;
-    border: 1px;
-    height: 100%;
-
-}
-
-.buscar input[type=text] {
-    width: 50%;
 }
 
 
@@ -147,7 +219,7 @@ input[type=number] {
 
 }
 
-.select{
+.select {
     justify-content: space-around;
 }
 
@@ -179,7 +251,6 @@ input[type=number] {
 }
 
 #lbl {
-    cursor: pointer;
     background-color: #6ab982;
     width: 50%;
     padding: 20px 40px;
@@ -191,9 +262,11 @@ input[type=number] {
 }
 
 #lbl:hover,
-.btn:hover {
+.btn:hover,
+.add:hover {
     background-color: #3e694b;
     color: whitesmoke;
+    cursor: pointer;
 }
 
 
@@ -226,6 +299,7 @@ input[type=number] {
         background-image: none;
         background-color: rgba(214, 255, 152, 0.582);
     }
+
     main {
         display: block;
         height: 800px;

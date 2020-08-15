@@ -1,15 +1,15 @@
 Front-end:
-    ☐ remover Nº de digitos
-    ☐ alterar o modo de inclusão de busca
+    ✔ remover Nº de digitos @done (15/08/2020 16:02:16)
+    ✔ alterar o modo de inclusão de busca @done (15/08/2020 16:02:23)
     ☐ colocar um tutorial 
     ☐ fazer um design responsivo 
-    ☐ incluir inicio e fim do documento
+    ✘ incluir inicio e fim do documento @cancelled (15/08/2020 16:02:35)
 Back-end:
     ✔ melhorar desempenho @done (12/08/2020 16:42:07)
     ☐ adicionar conversor CSV
     ☐ adicionar conversor TXT
     ☐ converter o arquivo de entrada para UTF-8
-    ☐ utilzar dados de inicio e fim do documento
+    ✔ utilzar dados de inicio e fim do documento @done (15/08/2020 10:56:07)
 
     
 

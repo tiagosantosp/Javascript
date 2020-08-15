@@ -1,5 +1,30 @@
 let texto = document.getElementById('file') //pega conteudo do inputFile
+let btn = document.querySelector('button')
+const input = document.querySelector('input')
 
+btn.addEventListener('click', preencherLista)
+
+function preencherLista(e) {
+    const lista = document.querySelector('.lista')
+    const li = document.createElement('li')
+
+    const del = document.createElement('button')
+    del.innerHTML = '<i class="fa fa-trash"></i>'
+
+    if (input.value !== '') {
+        li.textContent = input.value
+        input.value = ''
+        lista.appendChild(li)
+        li.appendChild(del)
+
+    }
+
+    del.addEventListener('click', function () {
+        const parent = this.parentNode
+        parent.remove()
+    })
+
+}
 
 function lerArquivo() {
     const reader = new FileReader()
@@ -19,7 +44,7 @@ function lerArquivo() {
 function converterArquivo() {
     if (!texto.files[0]) return window.alert('selecioar arquivo')
     let conteudo = document.querySelector('#none').innerHTML
-
+    document.querySelector('#none').remove()
 
     let regex = /[^\n]+/g //remove linhas em branco
 
@@ -28,7 +53,7 @@ function converterArquivo() {
     let relatorio = ''
 
     for (item of semLinhasBranco) { //Juntando o Array de para ser uma string única
-        relatorio += item.replace(/( )+/g, ' ') //removendo as tabulações
+        relatorio += item.replace(/(  )+/g, '  ') //removendo as tabulações
     }
     //console.log(relatorio)
 
@@ -41,49 +66,52 @@ function converterArquivo() {
 }
 
 
-async function buscarDados(relatorio) {
+function buscarDados(relatorio) {
 
 
-    let txt1 = document.querySelector('#txt1').value
-    let txt2 = document.querySelector('#txt2').value
-    let txt3 = document.querySelector('#txt3').value
-    let n1 = document.querySelector('#n1').value
-    let n2 = document.querySelector('#n2').value
-    let n3 = document.querySelector('#n3').value
+    let inicio = document.querySelectorAll('li:first-child')[0].innerText
+    let fim = document.querySelectorAll('li:last-child')[0].innerText
+    let sequencia = '[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100}'
+    let itens = document.querySelectorAll('li')
 
+    let regex = ``
+    let nomes = []
 
-    let campo1 = new RegExp(`${txt1}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n1}}`, 'g')
-    let campo2 = new RegExp(`${txt2}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,${n2}}`, 'g')
-    let campo3 = new RegExp(`${txt3}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ||/]{1,${n3}}`, 'g')
-    console.log(txt1, txt2, txt3)
-
-    let dadosCampo1, dadosCampo2, dadosCampo3
-
-    dadosCampo1 = relatorio.match(campo1)
-    dadosCampo2 = relatorio.match(campo2)
-    dadosCampo3 = relatorio.match(campo3)
-
-
-    let data = []
-
-    for (let index = 0; index < dadosCampo1.length; index++) {
-        try {
-            
-            data[index] = {
-                [txt1]: dadosCampo1[index].replace(`${txt1}`, ''),
-                [txt2]: dadosCampo2[index].replace(`${txt2}`, ''),
-                [txt3]: dadosCampo3[index].replace(`${txt3}`, '')
-            }
-        } catch (error) {
-            data[index] = {
-                [txt1]: `ERRO NA POSICÃO ${index}`,
-                [txt2]: `ERRO NA POSICÃO ${index}`,
-                [txt3]: `ERRO NA POSICÃO ${index}`
-            }
-        }    
+    for (item of itens) {
+        regex += `(${item.innerText+sequencia}).*?`
+        nomes.push(item.innerText)
     }
 
 
+    let campos = new RegExp(`(${inicio+sequencia}).*?(${fim+sequencia})`, 'g')
+    let campos2 = new RegExp(regex)
+
+    documentos = relatorio.match(campos)
+
+
+    let data = []
+    let teste
+    let obj = {}
+    let num
+    for (doc in documentos) {
+        teste = campos2.exec(documentos[doc])
+        if (teste == null) {
+            teste = "  " 
+        }
+        for (t = 0;t < teste.length; t++){
+            if (t == 0){continue}
+            num = t - 1 
+            try {
+                obj[nomes[num]] = teste[t].replace(nomes[num] , '')                
+            } catch (error) {
+                obj[nomes[num]] = teste[t]
+            }
+        }
+        data.push(obj)  
+        obj = {}
+    }
+    console.log(data)
+    
     if (document.querySelector('#excel').checked) {
         converteExcel(data)
     }
@@ -94,6 +122,7 @@ async function buscarDados(relatorio) {
         converteTxt(data)
     }
 }
+
 
 function converteCSV(data) {
     window.alert('FUNÇÃO NÃO IMPLEMENTADA')
