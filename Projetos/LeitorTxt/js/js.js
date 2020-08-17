@@ -151,21 +151,16 @@ function convertToCSV(arr) {
     }).join('\n')
     
     console.log(text)
-    let blob = new Blob([text], {
-        type: "text/plain;charset=utf-8"
-    })
+    let blob = new Blob([text], {type: "text/csv;charset=UTF-8"})
     saveAs(blob, "dados.csv")
 }
 
 
 function converteJSON(data) {
-    let obj = {}
-    data.forEach(data => obj.dados += JSON.stringify(data))
+    let obj = JSON.stringify(data)
 
     console.log(obj)
-/*
-    let blob = new Blob([data], {
-        type: "text/plain;charset=utf-8"
-    })
-    saveAs(blob, "dados.json")*/
+
+    let blob = new Blob([obj], {type: "data:application/json;charset=UTF-8"})
+    saveAs(blob, "dados.json")
 }

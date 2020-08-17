@@ -202,10 +202,18 @@ input[type=number] {
 
 .fa-file-excel {
     color: green;
+    transition: .5s;
+    
+}
+
+.fa-file-excel:hover,
+.fa-file-csv:hover{
+    font-size: 1.5em;
 }
 
 .fa-file-csv {
     color: skyblue;
+    transition: .5s;
 }
 
 
@@ -218,6 +226,7 @@ input[type=number] {
     width: 80%;
 
 }
+
 
 .select {
     justify-content: space-around;
