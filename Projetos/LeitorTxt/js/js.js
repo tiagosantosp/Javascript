@@ -96,40 +96,32 @@ function buscarDados(relatorio) {
     for (doc in documentos) {
         teste = campos2.exec(documentos[doc])
         if (teste == null) {
-            teste = "  " 
+            teste = "  "
         }
-        for (t = 0;t < teste.length; t++){
-            if (t == 0){continue}
-            num = t - 1 
+        for (t = 0; t < teste.length; t++) {
+            if (t == 0) {
+                continue
+            }
+            num = t - 1
             try {
-                obj[nomes[num]] = teste[t].replace(nomes[num] , '')                
+                obj[nomes[num]] = teste[t].replace(nomes[num], '')
             } catch (error) {
                 obj[nomes[num]] = teste[t]
             }
         }
-        data.push(obj)  
+        data.push(obj)
         obj = {}
     }
-    console.log(data)
-    
+
     if (document.querySelector('#excel').checked) {
         converteExcel(data)
     }
     if (document.querySelector('#csv').checked) {
-        converteCSV(data)
+        convertToCSV(data)
     }
     if (document.querySelector('#txt').checked) {
-        converteTxt(data)
+        converteJSON(data)
     }
-}
-
-
-function converteCSV(data) {
-    window.alert('FUNÇÃO NÃO IMPLEMENTADA')
-}
-
-function converteTxt(data) {
-    window.alert('FUNÇÃO NÃO IMPLEMENTADA')
 }
 
 
@@ -144,6 +136,36 @@ function converteExcel(data) {
 
     /* gerar um arquivo XLSX */
 
-    XLSX.writeFile(wb, "sheetjs.xlsx")
+    XLSX.writeFile(wb, "dados.xlsx")
 
+}
+
+
+
+
+
+function convertToCSV(arr) {
+    const array = [Object.keys(arr[0])].concat(arr)
+    let text = array.map(it => {
+        return Object.values(it).toString()
+    }).join('\n')
+    
+    console.log(text)
+    let blob = new Blob([text], {
+        type: "text/plain;charset=utf-8"
+    })
+    saveAs(blob, "dados.csv")
+}
+
+
+function converteJSON(data) {
+    let obj = {}
+    data.forEach(data => obj.dados += JSON.stringify(data))
+
+    console.log(obj)
+/*
+    let blob = new Blob([data], {
+        type: "text/plain;charset=utf-8"
+    })
+    saveAs(blob, "dados.json")*/
 }

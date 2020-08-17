@@ -6,10 +6,11 @@ Front-end:
     ✘ incluir inicio e fim do documento @cancelled (15/08/2020 16:02:35)
 Back-end:
     ✔ melhorar desempenho @done (12/08/2020 16:42:07)
-    ☐ adicionar conversor CSV
-    ☐ adicionar conversor TXT
+    ✔ adicionar conversor CSV @done (17/08/2020 05:58:30)
+    ✘ adicionar conversor TXT @cancelled (17/08/2020 03:54:32)
     ☐ converter o arquivo de entrada para UTF-8
     ✔ utilzar dados de inicio e fim do documento @done (15/08/2020 10:56:07)
+    ☐ adicionar conversor JSON
 
     
 
