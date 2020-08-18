@@ -56,7 +56,7 @@ function converterArquivo() {
     let relatorio = ''
 
     for (item of semLinhasBranco) { //Juntando o Array de para ser uma string única
-        relatorio += item.replace(/(  )+/g, '  ') //removendo as tabulações
+        relatorio += item.replace(/(  ){2,}/g, '  ') //removendo as tabulações
     }
     
 
@@ -69,7 +69,7 @@ function buscarDados(relatorio) {
 
     let inicio = document.querySelectorAll('li:first-child')[0].innerText
     let fim = document.querySelectorAll('li:last-child')[0].innerText
-    let sequencia = '[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/| ]{1,100}'
+    let sequencia = '[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100}[ ]?'
     let itens = document.querySelectorAll('li')
 
     let regex = ``
