@@ -27,7 +27,7 @@
                     <ol class="lista"></ol>
                 </div>
                 <label id="lbl" for="file">SELECIONAR ARQUIVO <i class="fas fa-file-download"></i></label>
-                <input type="file" onchange="lerArquivo()" id="file">
+                <input type="file" onchange="lerArquivo()" id="file" accept=".txt">
             </div>
 
             <div class="rigth">
@@ -35,7 +35,7 @@
                     <div class="icon">
                         <label for="excel"><i class="far fa-file-excel"></i></label>
                         <label for="csv"><i class="fas fa-file-csv"></i></label>
-                        <label for="txt"><img  src="./img/json-file.png"></label>
+                        <label for="txt"><img id="json"  href="./img/json-file.png"></label>
                     </div>
                     <div class="select">
                         <input type="radio" id="excel" checked name="unico" value="excel">

@@ -37,6 +37,9 @@ function lerArquivo() {
 
         document.querySelector('#none').innerHTML = reader.result
     }
+    const selecionar = document.querySelector('#lbl')
+    selecionar.innerText = texto.files[0].name
+
     reader.readAsText(arquivo)
 
 }
@@ -55,12 +58,7 @@ function converterArquivo() {
     for (item of semLinhasBranco) { //Juntando o Array de para ser uma string única
         relatorio += item.replace(/(  )+/g, '  ') //removendo as tabulações
     }
-    //console.log(relatorio)
-
-    //let inicioFim = /Emitente:.+?DATASUL/g
-
-    //let relatorioSeparado = relatorio.match(inicioFim)
-    //document.querySelector('#texto').innerHTML = relatorioSeparado[3]
+    
 
     buscarDados(relatorio)
 }
@@ -71,7 +69,7 @@ function buscarDados(relatorio) {
 
     let inicio = document.querySelectorAll('li:first-child')[0].innerText
     let fim = document.querySelectorAll('li:last-child')[0].innerText
-    let sequencia = '[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100}'
+    let sequencia = '[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/| ]{1,100}'
     let itens = document.querySelectorAll('li')
 
     let regex = ``

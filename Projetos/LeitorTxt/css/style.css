@@ -186,9 +186,6 @@ input[type=file] {
     display: none;
 }
 
-input[type=number] {
-    width: 7%;
-}
 
 #div {
     display: flex;
@@ -209,6 +206,7 @@ input[type=number] {
 .fa-file-excel:hover,
 .fa-file-csv:hover{
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .fa-file-csv {
@@ -216,6 +214,16 @@ input[type=number] {
     transition: .5s;
 }
 
+#json {
+    transition: .5s;
+    width: 35%;
+    height: 80%;
+
+}
+#json:hover {
+    width: 50%;
+    height: 100%;
+}
 
 
 .select,
