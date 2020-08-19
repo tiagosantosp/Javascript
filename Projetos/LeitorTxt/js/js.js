@@ -69,7 +69,7 @@ function buscarDados(relatorio) {
 
     let inicio = document.querySelectorAll('li:first-child')[0].innerText
     let fim = document.querySelectorAll('li:last-child')[0].innerText
-    let sequencia = '[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100}[ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100}[ ]?'
+    let sequencia = '([ ]?[A-Za-z0-9|.|,|záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ|/]{1,100})+'
     let itens = document.querySelectorAll('li')
 
     let regex = ``
@@ -90,21 +90,26 @@ function buscarDados(relatorio) {
     let data = []
     let teste
     let obj = {}
-    let num
+    let num 
     for (doc in documentos) {
         teste = campos2.exec(documentos[doc])
         if (teste == null) {
             teste = "  "
         }
+        num = 0
         for (t = 0; t < teste.length; t++) {
-            if (t == 0) {
+            if (t % 2 == 0) {
                 continue
             }
-            num = t - 1
+            
             try {
                 obj[nomes[num]] = teste[t].replace(nomes[num], '')
+                
+                num += 1
+                
             } catch (error) {
                 obj[nomes[num]] = teste[t]
+                num += 1
             }
         }
         data.push(obj)
