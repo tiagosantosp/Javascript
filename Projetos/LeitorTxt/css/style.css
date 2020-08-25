@@ -74,6 +74,7 @@ input {
 .add {
     outline: none;
     color: #777;
+    padding: 0 10px;
     font-size: 1.3rem;
     border-radius: 10px;
     box-shadow: 1px 1px 3px grey;
@@ -197,33 +198,38 @@ input[type=file] {
 
 
 
+.junto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .2em;
+    font-family: 'Sriracha', cursive;
+}
 .fa-file-excel {
     color: green;
-    transition: .5s;
     
-}
-
-.fa-file-excel:hover,
-.fa-file-csv:hover{
-    font-size: 1.5em;
-    cursor: pointer;
 }
 
 .fa-file-csv {
     color: skyblue;
+}
+
+.fa-file-code {
+    color: mediumslateblue;
+    
+}
+
+#i {
+    font-size: 5em;
     transition: .5s;
 }
 
-#json {
-    transition: .5s;
-    width: 80%;
-    height: 80%;
 
-}
-#json:hover {
-    height: 150%;
+#i:hover {
+    font-size: 6em;
     cursor: pointer;
 }
+
 
 
 .select,
@@ -255,8 +261,8 @@ input[type=file] {
 
 
 .btn {
-    border-radius: 20px;
-    width: 50%;
+    border-radius: 10px;
+    width: 80%;
     height: 15%;
     box-shadow: 1px 1px 3px grey;
     border: none;
@@ -269,13 +275,14 @@ input[type=file] {
 
 #lbl {
     background-color: #6ab982;
-    width: 50%;
-    padding: 20px 40px;
+    width: 40%;
+    padding: 10px 40px;
     border-radius: 10px;
     box-shadow: 1px 1px 3px green;
     transition: .3s;
     font-family: 'Sriracha', cursive;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #lbl:hover,

@@ -1,4 +1,4 @@
-let texto = document.getElementById('file') //pega conteudo do inputFile
+let texto = document.getElementById('file') 
 let btn = document.querySelector('button')
 const input = document.querySelector('input')
 
@@ -39,7 +39,6 @@ function lerArquivo() {
     }
     const selecionar = document.querySelector('#lbl')
     selecionar.innerText = texto.files[0].name
-
     reader.readAsText(arquivo)
 
 }
@@ -115,6 +114,7 @@ function buscarDados(relatorio) {
         data.push(obj)
         obj = {}
     }
+    
 
     if (document.querySelector('#excel').checked) {
         converteExcel(data)
@@ -140,7 +140,8 @@ function converteExcel(data) {
     /* gerar um arquivo XLSX */
 
     XLSX.writeFile(wb, "dados.xlsx")
-
+    window.location.reload()
+    
 }
 
 
@@ -152,18 +153,17 @@ function convertToCSV(arr) {
     let text = array.map(it => {
         return Object.values(it).toString()
     }).join('\n')
-    
-    console.log(text)
     let blob = new Blob([text], {type: "text/csv;charset=UTF-8"})
     saveAs(blob, "dados.csv")
+    window.location.reload()
 }
 
 
 function converteJSON(data) {
     let obj = JSON.stringify(data)
-
-    console.log(obj)
-
+    
+    
     let blob = new Blob([obj], {type: "data:application/json;charset=UTF-8"})
     saveAs(blob, "dados.json")
+    window.location.reload()
 }

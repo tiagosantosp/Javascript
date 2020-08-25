@@ -23,7 +23,7 @@
         <main>
             <div class="left">
                 <div class="busca">
-                    <input type="text" placeholder="Digite o campo"><button class="add">Add</button>
+                    <input type="text" placeholder="Digite o campo"><button class="add"><i class="fas fa-plus"></i></button>
                     <ol class="lista"></ol>
                 </div>
                 <label id="lbl" for="file">SELECIONAR ARQUIVO <i class="fas fa-file-download"></i></label>
@@ -33,9 +33,9 @@
             <div class="rigth">
                 <div id="radio">
                     <div class="icon">
-                        <label for="excel"><i class="far fa-file-excel"></i></label>
-                        <label for="csv"><i class="fas fa-file-csv"></i></label>
-                        <label for="txt"><img id="json"  src="./img/json-file.png"></label>
+                        <label for="excel" class="junto">EXCEL<i id="i" class="far fa-file-excel"></i></label>
+                        <label for="csv" class="junto">CSV<i id="i" class="fas fa-file-csv"></i></label>
+                        <label for="txt" class="junto">JSON<i  id="i" class="far fa-file-code"></i></label>
                     </div>
                     <div class="select">
                         <input type="radio" id="excel" checked name="unico" value="excel">
