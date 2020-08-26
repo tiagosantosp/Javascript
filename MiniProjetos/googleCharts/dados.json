@@ -1,0 +1,16 @@
+[{
+        "nome": "tiago",
+        "preco": 120,
+        "desconto": 0.15
+    },
+    {
+        "nome": "dani",
+        "preco": 100,
+        "desconto": 0.15
+    },
+    {
+        "nome": "maju",
+        "preco": 20,
+        "desconto": 0.15
+    }
+]

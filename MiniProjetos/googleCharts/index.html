@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+        button {
+            position: absolute;
+            top: 60vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart-container" style="position: relative; height:10vh; width:50vh">
+        <canvas id="myChart" width="10px" height="10px"></canvas>
+    </div>
+
+    <button onclick="table()">MUDA TABELA</button>
+    <script>
+        function table() {
+            const url = 'dados.json'
+            fetch(url)
+                .then(resp => resp.json())
+                .then(dados => {
+                    const nome = dados.map(dado => dado.nome)
+                    const valor = dados.map(dado => dado.preco)
+
+                    grafico(nome, valor)
+                })
+
+        }
+
+        function grafico(nome, valor) {
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: nome,
+                    datasets: [{
+                        label: '# of Votes',
+                        data: valor,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+
+            })
+        }
+    </script>
+</body>
+
+</html>
