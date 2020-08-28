@@ -24,14 +24,14 @@
         <canvas id="myChart" width="10px" height="10px"></canvas>
     </div>
 
-    <button class="btn" onclick="table()">MUDA TABELA</button>
     <button class="btn2" onclick="novo()">MUDA TABELA</button>
     <script>
-        function table() {
-            const url = 'dados.json'
-            fetch(url)
+        setInterval(function(){
+            const url = 'http://localhost:4567/'
+            fetch(url, {method: 'GET'})
                 .then(resp => resp.json())
                 .then(dados => {
+
                     const nome = dados.map(dado => dado.nome)
                     const valor = dados.map(dado => dado.preco)
 
@@ -41,8 +41,7 @@
                     chart.update()
 
                 })
-
-        }
+        }, 5000)
 
 
         function novo() {
