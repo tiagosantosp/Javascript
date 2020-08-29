@@ -15,6 +15,23 @@
     <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+        const fonte = $('#div1').css('font-family')  //Ler o conteudo de um atributo Css
+        $('#resultado').append(`Fonte é ${fonte}`)
+
+        $('#div1').css('font-size', '3em')//alterar o valor de uma propriedade CSS
+        $('#div1').css({'font-size':'3em', color : 'green'})//posso alterar varias propriedades ao mesmo tempo
+        $('#div1').css('font-size', ()=> {//Podemos passar uma callback para retornar o valor
+             return `${2 * 2}em`
+        })
+         
+        $('#div2').addClass('destaque')
+        
+        const temClasse = $('#div2').hasClass('destaque')//verifica se possui a classe e retorna boolean
+        $('#resultado').append(`<br>Tem Classe ? ${temClasse}`)
+
+        $('#div2').removeClass('destaque')
+        $('#div2').toggleClass('destaque')//verifica se possui caso sim ele remove se não adiciona a classe
+
+
     </script>
 </body>
