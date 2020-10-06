@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>servidor</title>
+</head>
+<body>
+    <main></main>
+    <script>
+
+
+        async function pegaConteudo(){
+            try {
+                const response = await fetch('http://localhost:4567/')//acessando o backend
+                const data = await response.json()//convertendo os dados do backend para json
+
+                mostar(data)
+            }catch (error){
+                console.log('error' )
+            }
+        }
+
+        pegaConteudo()
+
+        function mostar(pessoas){//criando uma lista e colocando no main com os dados enviados do backend
+            let saida = ''
+
+            for ( pessoa of pessoas) {
+                saida += `<li>${pessoa.name}</li>`
+            }
+
+            document.querySelector('main').innerHTML = saida
+        } 
+    </script>
+</body>
+</html>
