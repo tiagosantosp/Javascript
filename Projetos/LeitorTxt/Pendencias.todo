@@ -3,6 +3,7 @@ Front-end:
     ✔ alterar o modo de inclusão de busca @done (15/08/2020 16:02:23)
     ☐ colocar um tutorial 
     ☐ fazer um design responsivo 
+    ☐ Adicionar Boostrap no projeto
     ✔ cursor pointer nos icones @done (25/08/2020 04:59:08)
     ✔ trocar o icone do TXT para JSON @done (17/08/2020 16:18:59)
     ✘ incluir inicio e fim do documento @cancelled (15/08/2020 16:02:35)
@@ -14,6 +15,7 @@ Back-end:
     ☐ converter o arquivo de entrada para UTF-8
     ✔ utilzar dados de inicio e fim do documento @done (15/08/2020 10:56:07)
     ✔ adicionar conversor JSON @done (17/08/2020 16:18:15)
+    ☐ Criar um arquivo .md para o github
 
     
 
