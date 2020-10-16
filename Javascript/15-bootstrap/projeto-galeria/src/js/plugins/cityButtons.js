@@ -1,8 +1,8 @@
 import $ from "jquery"
 
-import { onLoadHtmlSuccess } from '../core/includes'
+import { onLoadHtmlSuccess} from '../core/includes'
 
-const duration = 600
+const duration = 300
 
 function filterByCity(city) {
     $('[wm-city]').each(function (i, e) {
@@ -15,16 +15,13 @@ function filterByCity(city) {
                 $(this).parent().addClass('d-none')
             })
         }
-
     })
 }
 
-
 $.fn.cityButtons = function () {
-    
     const cities = new Set
     $('[wm-city]').each(function (i, e) {
-        cities.add($(e).attr('[wm-city]'))
+        cities.add($(e).attr('wm-city'))
     })
 
     const btns = Array.from(cities).map(city => {
@@ -41,11 +38,9 @@ $.fn.cityButtons = function () {
     btnGroup.append(btns)
 
     $(this).html(btnGroup)
-
     return this
 }
 
 onLoadHtmlSuccess(function () {
-
     $('[wm-city-buttons]').cityButtons()
 })
