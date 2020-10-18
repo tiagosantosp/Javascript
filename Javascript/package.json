@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "axios": "^0.19.2",
-    "lodash": "^4.17.15",
-    "fs"
+    "lodash": "^4.17.15"
   }
 }
