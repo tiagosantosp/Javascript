@@ -4,6 +4,7 @@
     --header-heigth: 100px;
     --aside-width: 225px;
     --footer-heigth: 40px;
+    --menu-top-heigth:70px;
 
     --shadow: 0 2px 23px 0 rgba(0,0,0, 0.1), 0 2px 49px 0 rgba(0,0,0,0.06);
 }
@@ -45,4 +46,38 @@ main.content {
 
 footer.footer {
     grid-area: footer;
+}
+
+@media(max-width:768px) {
+    .app{
+        grid-template-rows: 
+            var(--header-heigth)
+            var(--menu-top-heigth)
+            1fr
+            var(--footer-heigth);
+        grid-template-columns: var(--aside-width) 1fr;
+        grid-template-areas: 
+            "logo header"
+            "menu menu"
+            "content content"
+            "footer footer";
+    }
+}
+
+@media(max-width:576px){
+    .app {
+        grid-template-rows: 
+            var(--logo-height)
+            var(--menu-top-heigth)
+            1fr
+            var(--footer-heigth);
+        grid-template-columns: 1fr;
+
+        grid-template-areas: 
+            "logo"
+            "menu"
+            "content"
+            "footer";
+        
+    }
 }
