@@ -1,21 +1,21 @@
-import React , { Component } from 'react'
-import Main from '../template/Main'
+import React, { Component } from 'react'
 import axios from 'axios'
+import Main from '../template/Main'
 
 const headerProps = {
     icon: 'users',
     title: 'Usuários',
-    subtitle: 'Cadastro de Usuários: Incluir, Listar, Alterar, Excluir!'
+    subtitle: 'Cadastro de usuários: Incluir, Listar, Alterar e Excluir!'
 }
 
-const baseUrl ='http://http://localhost:3001/users'
+const baseUrl = 'http://localhost:3001/users'
 const initialState = {
-    user : {name: '', email: ''},
+    user: { name: '', email: '' },
     list: []
 }
 
-
 export default class UserCrud extends Component {
+
     state = { ...initialState }
 
     componentWillMount() {
@@ -95,9 +95,10 @@ export default class UserCrud extends Component {
             </div>
         )
     }
+
     render() {
-        return(
-            <Main {...headerProps}> 
+        return (
+            <Main {...headerProps}>
                 {this.renderForm()}
             </Main>
         )

@@ -1,11 +1,19 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Arthur Oliveira",
-        "email": "aoliveira@cod3r.com.br"
-        },{
-        "id": 2,
-        "name": "Maria Julia",
-        "email": "mj@cod3r.com.br"
-        }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Oliveira",
+      "email": "aoliveira@cod3r.com.br"
+    },
+    {
+      "id": 2,
+      "name": "Maria Julia",
+      "email": "mj@cod3r.com.br"
+    },
+    {
+      "name": "Tiago Santos Pereira",
+      "email": "tiago_s.p@hotmail.com",
+      "id": 3
     }
+  ]
+}
