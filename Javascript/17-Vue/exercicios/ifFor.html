@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>If & For</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p v-for="(aluno, i) in alunos"><!-- PODEMOS UTILZIAR UM FOR DIRETAMENTE NO HTML -->
+            {{i+1}}) {{aluno.nome}} - {{aluno.nota}}
+            <span v-if="aluno.nota >= 9">Honra</span><!-- PODEMOS UTILIZAR CONDIÇÕES NO HTML -->
+            <span v-else-if="aluno.nota >= 5">Aprovado</span>
+            <span v-else>Reprovado</span>
+
+        </p>
+        <p v-for="num in 5">{{num}}</p>
+
+    </div>
+    <script>
+        new Vue ({
+            el: "#app",
+            data: {
+                alunos: [
+                    {nome: "ana", nota: 7.8},
+                    {nome: "bia", nota: 9.1},
+                    {nome: "carlos", nota: 6.8},
+                    {nome: "Daniel", nota: 2.8}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

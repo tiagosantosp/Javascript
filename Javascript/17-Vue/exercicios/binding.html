@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Binding</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p><a v-bind:href="link" >google</a></p><!-- PODEMOS ACESSAR UMA PROPRIEDADE DATA ATRAVÉS DO V-BIND -->
+        <p><a :href="link" >google2</a></p><!-- PODEMOS ACESSAR APENAS COLOCANDO ":" ANTES DA PROPRIEDADE HTML-->
+        <p>
+            <input type="text" v-model="nome"><!-- AO UTILIZAR O V-MODEL ELE ATUALIZA EM 2 DIREÇÕES  -->
+            <span>{{ nome }} </span>
+        </p>
+    </div>
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                nome : "TIago",
+                link: "http://www.google.com.br"
+            },
+            watch: {/* UTILIZA UMA FUNÇÃO PARA OBSERVAR MUDANÇAS NOS DADOS */
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
+    </script>
+</body>
+</html>

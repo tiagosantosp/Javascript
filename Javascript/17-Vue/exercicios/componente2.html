@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        
+        <contador></contador>
+        <contador></contador>
+        
+    </div>
+    <script>
+        Vue.component('contador', {/* CRIAR UM COMPONENT NO VUE */
+           data: function () {
+                return {
+                    cont : 0
+                }
+           },
+           methods: {
+               somar() {
+                   return this.cont++
+               }
+           },
+            template: `
+                <div> 
+                    <h1>Contador {{ cont }} </h1>
+                    <button @click="somar">Somar</button>
+                </div>
+            `
+        })
+
+        new Vue ({
+            el: "#app",
+
+        })
+    </script>
+</body>
+</html>
