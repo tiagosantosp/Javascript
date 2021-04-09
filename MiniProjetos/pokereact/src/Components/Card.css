@@ -1,0 +1,21 @@
+.pokeCard {
+    width: 20%;
+    min-width: 100px;
+    text-align: center;
+}
+
+.fighting, .fire {
+    background: linear-gradient(to right, #ee0979, #ff6a00); 
+}
+
+.flying, .water {
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+}
+
+.rock, .ground{
+    background: linear-gradient(to right, #659999, #f4791f);
+}
+
+.grass {
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+}
