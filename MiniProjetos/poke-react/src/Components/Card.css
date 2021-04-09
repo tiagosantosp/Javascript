@@ -1,0 +1,30 @@
+.pokeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px black;
+    margin: 10px;
+}
+
+.pokeCard img{
+    width: 90%;
+    box-shadow: 0 0 3px black;
+    margin: 5px;
+}
+
+.fighting, .fire, .normal {
+    background: linear-gradient(to right, #ee0979, #ff6a00); 
+}
+
+.flying, .water {
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+}
+
+.rock, .ground{
+    background: linear-gradient(to right, #659999, #f4791f);
+}
+
+.grass, .bug {
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+}
