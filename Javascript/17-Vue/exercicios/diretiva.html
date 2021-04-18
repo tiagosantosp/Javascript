@@ -9,11 +9,13 @@
 <body class="exercicio">
     <div id="app">
         <input type="text" v-model="nome">
-        <div v-inverter="nome"></div>
+        <div v-inverter="nome"></div> 
     </div>
     <script>
-        Vue.directive('inverter', {
-            componentUpdated(el, binding) {
+
+        /*DIRETIVA É AS FUNÇÔES EXCLUSIVAS DO VUE POR EXEMPLO V-BIND*/
+        Vue.directive('inverter', {/*AO CRIAR NÂO PRECISA COLOCAR "V-" ANTES DO NOME DA DIRETIVA*/
+            componentUpdated(el, binding) {/*NOME DA FUNÇÃO */
                 const invertido = binding.value.split('').reverse().join('')
                 el.innerHTML = invertido
             }
