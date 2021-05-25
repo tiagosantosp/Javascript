@@ -1,0 +1,18 @@
+{
+  "name": "maratona-discover",
+  "version": "1.0.0",
+  "description": "Programa para calcular valor de jobs Freelancer",
+  "main": "src/server.js",
+  "scripts": {
+    "dev" : "nodemon ."
+  },
+  "keywords": [],
+  "author": "Tiago",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
