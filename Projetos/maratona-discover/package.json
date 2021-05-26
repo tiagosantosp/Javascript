@@ -4,12 +4,13 @@
   "description": "Programa para calcular valor de jobs Freelancer",
   "main": "src/server.js",
   "scripts": {
-    "dev" : "nodemon ."
+    "dev": "nodemon ."
   },
   "keywords": [],
   "author": "Tiago",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {

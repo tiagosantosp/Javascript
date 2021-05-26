@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const routes = require('./routes')
 
+// setando o backend para utilizar o EJS
+app.set('view engine', 'ejs')
+
+//ao colocar os arquivos estaticos na pasta public o express consegue acessar de qualquer lugar da aplicação
 app.use(express.static("public"))
 
 app.use(routes)
