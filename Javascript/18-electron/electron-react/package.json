@@ -1,5 +1,5 @@
 {
-  "name": "react-electron",
+  "name": "electron-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,7 +38,6 @@
     ]
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.61",
     "autoprefixer": "^9.8.7",
     "electron": "^15.1.0",
     "postcss": "^7.0.38",
