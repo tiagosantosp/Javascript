@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>O seu mercado digital</h1>
+    <h3>Tudo o que você precisar encontar aqui!</h3>
+    <div class="nav">
+        <button click=>Frutas</button> 
+        <button>Limpeza</button> 
+    </div>
+    <ul>
+        <li *ngFor="let item of list" >
+            <div class="list-item {{ item.categoria }}"  > 
+                <p>
+                    <span class="itemDesc">{{ item.descricao}}</span>
+                    <span *ngIf="ConvertNumber(item.quantidade) > 0 ">( {{ ConvertNumber(item.quantidade) }}) </span>
+                    <span *ngIf="ConvertNumber(item.quantidade) == 0 ">( Não Disponível )</span>
+                </p>
+                <p>
+                    <span class="material-icons">add_circle_outline</span>
+                    <span class="material-icons">remove_circle_outline</span>
+                </p>
+            </div>                
+                
+        </li>
+    </ul>
+    
+</div>

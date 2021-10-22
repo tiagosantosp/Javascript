@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.header .border {
+    height: 50px;
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 5px solid rgb(50, 152, 247) ;
+}
+
+.header img {
+    position: center;
+    height: 10rem;
+    width: 15rem;
+    
+}
+
+.header .car-icon {
+    font-size: 4rem;
+    color: orange;
+}

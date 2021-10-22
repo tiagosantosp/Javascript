@@ -5,12 +5,14 @@
     justify-content: center;
     box-shadow: 0 0 3px black;
     margin: 10px;
+    border-radius: 10px;
 }
 
 .pokeCard img{
     width: 90%;
     box-shadow: 0 0 3px black;
     margin: 5px;
+    border-radius: 5px;
 }
 
 .fighting, .fire, .normal {

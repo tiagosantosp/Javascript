@@ -1,0 +1,75 @@
+
+.container {
+    margin-left: 10%;
+    width: 80vw;
+    margin-top: 2%;
+    display: flex;
+    color:gray;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    border-bottom: 1px solid orange;
+}   
+
+.nav button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    color: gray;
+    font-size: 1.25rem;
+    margin: 10px 20px;
+
+    
+}
+
+ul{
+    padding-left: 0;
+    height: 50vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+#frutas {
+    display:hidden;
+}
+
+.list-item  {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    list-style: none;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px .9px rgb(170, 169, 169);
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin:0;
+    display: flex;
+    justify-content:space-between;
+}
+
+span {
+    margin-right: 10px;
+}
+
+
+.itemDesc{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
