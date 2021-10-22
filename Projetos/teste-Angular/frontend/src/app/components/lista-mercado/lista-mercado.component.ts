@@ -8,22 +8,30 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListaMercadoComponent implements OnInit {
 
-  @Input() frutas = [];
-  @Input() limpeza: string = 'limpeza';
+
 
   @Input() list: Array<any> = []; 
 
+  toggle: boolean = true;
+  visible: string = 'limpeza'
+  
   
 
   constructor( ) { }
 
   ngOnInit() {
-    
   }
 
   ConvertNumber(stringNum : string) {
     return parseInt(stringNum)
   }
-
+  
+  orange() {
+  this.toggle = !this.toggle;
+  this.visible = !this.toggle ? 'frutas' : 'limpeza'
+  }
+  switchCategory() {
+    return this.visible
+  }
   
 }

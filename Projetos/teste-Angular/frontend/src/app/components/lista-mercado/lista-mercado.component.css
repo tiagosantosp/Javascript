@@ -13,18 +13,25 @@
     border-bottom: 1px solid orange;
 }   
 
+.orange {
+    color: orange;
+    font-weight: bold;
+}
+
+
 .nav button {
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden; 
-    color: gray;
     font-size: 1.25rem;
     margin: 10px 20px;
 
     
 }
+
+
 
 ul{
     padding-left: 0;
@@ -36,9 +43,7 @@ ul::-webkit-scrollbar {
     display: none;
 }
 
-#frutas {
-    display:hidden;
-}
+
 
 .list-item  {
     display: flex;
@@ -72,4 +77,10 @@ span {
     margin-left: 20px;
 }
 
+.material-icons { 
+    cursor: pointer;
+}
 
+.hide { 
+    display: none;
+}

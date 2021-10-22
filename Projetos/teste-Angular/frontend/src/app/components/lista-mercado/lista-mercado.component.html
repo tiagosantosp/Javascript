@@ -2,12 +2,22 @@
     <h1>O seu mercado digital</h1>
     <h3>Tudo o que você precisar encontar aqui!</h3>
     <div class="nav">
-        <button click=>Frutas</button> 
-        <button>Limpeza</button> 
+        <button 
+            #frutas
+            (click)="orange()" 
+            [ngClass]="{'orange' : toggle}">
+            frutas
+        </button>
+        <button
+            #limpeza
+            (click)="orange()"  
+            [ngClass]="{'orange' : !toggle}">
+            Limpeza
+        </button> 
     </div>
     <ul>
-        <li *ngFor="let item of list" >
-            <div class="list-item {{ item.categoria }}"  > 
+        <li *ngFor="let item of list"  [class.hide]="item.categoria == switchCategory()">
+            <div class="list-item "  > 
                 <p>
                     <span class="itemDesc">{{ item.descricao}}</span>
                     <span *ngIf="ConvertNumber(item.quantidade) > 0 ">( {{ ConvertNumber(item.quantidade) }}) </span>
