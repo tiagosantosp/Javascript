@@ -15,6 +15,12 @@
             Limpeza
         </button> 
     </div>
+        <p class='text' [class.hide]="!getToggle()">
+            As frutas são fontes de vitaminas, minerais, fibras e antioxidante de extrema importância para o funcionamento do nosso organismo.
+        </p>
+        <p class='text' [class.hide]="getToggle()">
+            Todos os itens de mercado e várias marcas.
+        </p>
     <ul>
         <li *ngFor="let item of list"  [class.hide]="item.categoria == switchCategory()">
             <div class="list-item "  > 

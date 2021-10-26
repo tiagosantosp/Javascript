@@ -33,5 +33,9 @@ export class ListaMercadoComponent implements OnInit {
   switchCategory() {
     return this.visible
   }
+
+  getToggle() {
+    return this.toggle
+  }
   
 }
