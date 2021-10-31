@@ -12,8 +12,18 @@
     },
     {
       "id": 3,
-      "name": "Sansung S20+",
+      "name": "Sansung S20+ big",
       "price": 5300.99
+    },
+    {
+      "name": "teste",
+      "price": "novo",
+      "id": 4
+    },
+    {
+      "name": "tiago",
+      "price": "228",
+      "id": 5
     }
   ]
 }
