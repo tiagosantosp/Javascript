@@ -24,6 +24,16 @@
       "name": "tiago",
       "price": "228",
       "id": 5
+    },
+    {
+      "name": "testando",
+      "price": "10000",
+      "id": 6
+    },
+    {
+      "name": "pente ",
+      "price": "1",
+      "id": 7
     }
   ]
 }
